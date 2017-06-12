@@ -41,9 +41,12 @@
 
         <div class="col-sm-7 text-left">
             <div class="page-header">
-                <input type="text" class="form-control" id="usr" placeholder="Search Friend">
-                <button type="button" class="btn btn-primary" id="searchfriend">Search</button>&nbsp;&nbsp;&nbsp;
-                <button type="button" class="btn btn-primary" id="showallfriends">Show ALl Friends </button>
+                <div id="searchandshowbutton" style="display: none;">
+                <input type="text" class="form-control" id="usr" placeholder="Search Friend"><br>
+                <button type="button" class="btn btn-primary" id="searchfriend" >Search</button>&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" id="showallfriends" >Show ALl Friends </button>
+                </div>
+
             </div>
 
             <div id="usercontainer">

@@ -5,7 +5,7 @@ $(document).ready(function(){
         var oauth_uri=" https://accounts.google.com/o/oauth2/auth?";
         var scopes="https://www.googleapis.com/auth/contacts https://www.googleapis.com/auth/contacts.readonly https://www.google.com/m8/feeds https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.circles.read";
         var client_id="518184818239-dgd4og7jf2fuc4tsubul0to3bqqd74oq.apps.googleusercontent.com";
-        var redirect_uri="http://localhost:8080/BakaryShop";
+        var redirect_uri="http://localhost:8080/";
         var type="token";
         var url=oauth_uri + "scope=" + scopes + "&client_id=" + client_id + "&redirect_uri=" + redirect_uri +  "&response_type=" + type;
         var win=window.open(url,"window for Oauth Google","width=500,higth=500");
@@ -47,6 +47,7 @@ $(document).ready(function(){
             success:function(result){
                 var data=result.feed.entry;
                 contactList=data;
+                $("#searchandshowbutton").show();
                 $( "#usercontainer" ).empty();
                 for(var i in data)
                 {
