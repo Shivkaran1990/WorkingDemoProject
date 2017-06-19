@@ -92,7 +92,7 @@ $(document).ready(function(){
         var currentdiv= document.createElement("div");
         var br = document.createElement("br");
         currentdiv.setAttribute("class","col-sm-5");
-        currentdiv.setAttribute("style","height: 135px;width: 245px;");
+        currentdiv.setAttribute("style","margin: 20px; height: 200px;padding: 10px 43px;background: #3999cb; width: 300px;border-radius:2px");
 
         var name = document.createElement("span");
         name.setAttribute("style","font-weight: bold;");
@@ -165,8 +165,8 @@ $(document).ready(function(){
      });
      }*/
 
-    /*  $("#searchGlobalfriends").click(function(){
-     var searchname = document.getElementById('usr').value;
+  $("#searchglobalfriend").click(function(){
+     var searchname = document.getElementById('gsearchvalue').value;
      var restUri='https://www.googleapis.com/plus/v1/people?access_token='+token
      $.ajax({
      url:restUri,
@@ -176,34 +176,38 @@ $(document).ready(function(){
      },
      dataType:'jsonp'
      });
-     });*/
+     });
 
-    /* function mapGolobleSearchdataOnGUI(response)
+  function mapGolobleSearchdataOnGUI(response)
      {
-     var data=response.items;
-     $( "#usercontainer" ).empty();
+         var data=response.items;
+         $( "#usercontainer" ).empty();
 
-     for(var i in data)
-     {
-     var currentdiv= document.createElement("div");
-     currentdiv.setAttribute("class","col-sm-4");
-     currentdiv.setAttribute("style","height: 135px; border: 1px solid #a1a1a1;padding: 10px 43px;background: ghostwhite;width: 198px;border-radius: 37px");
+         for(var i in data)
+         {
+             var currentdiv= document.createElement("div");
+             currentdiv.setAttribute("class","col-sm-4");
+             currentdiv.setAttribute("style","margin: 20px; height: 200px;padding: 10px 43px;background: #3999cb; width: 300px;border-radius:2px");
 
-     var imagechild = document.createElement("img");
-     imagechild.setAttribute("style","height:100px;width:100px;");
-     imagechild.setAttribute("src",data[i].image.url);
+             var imgdiv= document.createElement("div");
 
-     var lb = document.createElement("span");
-     lb.innerHTML = data[i].displayName;
+             var imagechild = document.createElement("img");
 
+             imagechild.setAttribute("style","margin-left: 45px;margin-bottom: 14px;HEIGHT: 113px;border-radius: 50%;");
+             imagechild.setAttribute("src",data[i].image.url);
 
+             imgdiv.appendChild(imagechild);
 
-     currentdiv.appendChild(imagechild);
-     currentdiv.appendChild(lb);
-     $('#usercontainer').append(currentdiv);
+             var lb = document.createElement("span");
+             lb.setAttribute("style","margin-left: 48px;font-size: 18px;color: white;");
+             lb.innerHTML = data[i].displayName;
 
+             currentdiv.appendChild(imgdiv);
+             currentdiv.appendChild(lb);
+             $('#usercontainer').append(currentdiv);
+
+         }
+         $('#usercontainer').show();
      }
-     $('#usercontainer').show();
-     }*/
 
 });
