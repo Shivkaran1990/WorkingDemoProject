@@ -1,5 +1,7 @@
 package com.karan.hbr.HibernetDemo;
 
+import java.util.Date;
+
 import javax.transaction.Transaction;
 
 import org.hibernate.SessionFactory;
@@ -22,7 +24,12 @@ public class App
         e1.setName("Ritu");
         e1.setSurname("Sharma");
         
-        session.save(e1);
+        Student s1=new Student();
+        s1.setName("karan");
+        s1.setSurname("Ravidas");
+        s1.setDOB(new Date());
+        s1.setMobileNumber("9860214064");
+        session.save(s1);
         session.getTransaction().commit();
     }
 }
